@@ -17,7 +17,8 @@ class ExplainResponse(BaseModel):
 
 # ✅ Chat
 class ChatRequest(BaseModel):
-    message: str
+    session_id: str
+    message:str
 
 
 class ChatResponse(BaseModel):

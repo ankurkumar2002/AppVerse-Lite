@@ -1,5 +1,34 @@
+# ✅ Java / Spring Boot
 target/
+*.jar
+*.war
+
+# ✅ Python (FastAPI)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# ✅ Node (if frontend later)
+node_modules/
+dist/
+build/
+
+# ✅ IDE files
 .idea/
 .vscode/
 *.iml
-.env
+
+# ✅ OS files
+.DS_Store
+Thumbs.db
+
+# ✅ Logs
+*.log
+
+# ✅ Optional Docker
+*.tar
+
+# ✅ Test files
+coverage/

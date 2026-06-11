@@ -1,6 +1,13 @@
 package com.appverselite.app_service.repository;
 
-import com.appverselite.app_service.entity.AppEntity;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AppRepository extends JpaRepository<AppEntity,Long>{}
+import com.appverselite.app_service.entity.AppEntity;
+
+public interface AppRepository extends JpaRepository<AppEntity, Long> {
+
+    List<AppEntity> findByCategoryIgnoreCase(String category); 
+}

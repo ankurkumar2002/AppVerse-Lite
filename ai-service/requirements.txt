@@ -2,3 +2,6 @@ fastapi
 uvicorn
 python-dotenv
 google-generativeai
+faiss-cpu
+sentence-transformers==2.6.1
+numpy==1.26.4

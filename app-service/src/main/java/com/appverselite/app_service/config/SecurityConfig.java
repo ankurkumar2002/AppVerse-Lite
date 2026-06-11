@@ -25,6 +25,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/apps/internal/**").permitAll() // ✅ allow internal APIs without auth
                         .requestMatchers("/api/apps/**").authenticated()   // ✅ protect APIs
                         .anyRequest().permitAll()
                 )

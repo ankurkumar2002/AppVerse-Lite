@@ -120,4 +120,11 @@ public class AppService {
                                 .updatedAt(app.getUpdatedAt())
                                 .build();
         }
+
+        public List<AppResponse> getAppsByCategory(String category) {
+            return appRepository.findByCategoryIgnoreCase(category)
+                    .stream()
+                    .map(this::mapToResponse)
+                    .toList();
+        }
 }

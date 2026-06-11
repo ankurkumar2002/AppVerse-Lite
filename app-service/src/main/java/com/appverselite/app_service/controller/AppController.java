@@ -5,6 +5,7 @@ import com.appverselite.app_service.service.AppService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -55,6 +56,18 @@ public class AppController {
         String email = authentication.getName();
 
         return ResponseEntity.ok(appService.explainApp(email, id));
+    }
+
+    @GetMapping("/internal/apps/category/{category}")
+    public ResponseEntity<?> getAppsByCategory(
+            @RequestHeader("X-INTERNAL-KEY") String key,
+            @PathVariable String category) {
+
+        if (!"my-secret-key".equals(key)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        return ResponseEntity.ok(appService.getAppsByCategory(category));
     }
 
 }

@@ -38,6 +38,9 @@ spring:
           uri: http://ai-service:8001
           predicates:
             - Path=/api/ai/**
+          filters:
+            - RewritePath=/api/ai/(?<segment>.*), /ai/${segment}
+
 
 
 management:
