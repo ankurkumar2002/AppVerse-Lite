@@ -685,14 +685,6 @@ Please ensure:
 - Documentation is updated
 - Commits are clearly described
 
----
-
-## 📝 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👤 Author
 
 **Your Name**  
